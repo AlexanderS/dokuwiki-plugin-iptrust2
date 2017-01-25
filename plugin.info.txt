@@ -1,0 +1,7 @@
+base   iptrust2
+author Alexander Sulfrian
+email  alexander@sulfrian.net
+date   2017-01-25
+name   iptrust2 plugin
+desc   Restrict anonymous access based on the IP address
+url    https://github.com/AlexanderS/dokuwiki-plugin-iptrust2
