@@ -88,7 +88,7 @@ class action_plugin_iptrust2 extends DokuWiki_Action_Plugin {
         if ($user) return;
 
         $networks = explode(' ', $this->getConf('trusted_ip'));
-        if ($this->check_ip($_SERVER['REMOTE_ADDR'], $networks) {
+        if ($this->check_ip($_SERVER['REMOTE_ADDR'], $networks)) {
             $event->preventDefault();
             return;
         }
