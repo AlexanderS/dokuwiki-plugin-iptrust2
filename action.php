@@ -29,7 +29,7 @@ class action_plugin_iptrust2 extends DokuWiki_Action_Plugin {
         $ip_n = inet_pton($ip);
         if ($ip_n === false) return false;
 
-        $ip_b = inet_to_bits($ip_n);
+        $ip_b = $this->inet_to_bits($ip_n);
     
         foreach ($nets as $net) {
             $pos = strpos($net, '/');
@@ -49,7 +49,7 @@ class action_plugin_iptrust2 extends DokuWiki_Action_Plugin {
                     continue;
                 }
     
-                $net_b = inet_to_bits($net_n);
+                $net_b = $this->inet_to_bits($net_n);
     
                 $subnet = substr($net, $pos+1);
                 if (substr($ip_b, 0, $subnet) === substr($net_b, 0, $subnet)) {
