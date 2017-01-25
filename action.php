@@ -35,7 +35,7 @@ class action_plugin_iptrust2 extends DokuWiki_Action_Plugin {
             $pos = strpos($net, '/');
             if ($pos === false) {
                 $net_n = inet_pton($net);
-                if ($net_n === false) return false;
+                if ($net_n === false) continue;
 
                 if ($net_n === $ip_n) {
                     return true;
@@ -43,7 +43,7 @@ class action_plugin_iptrust2 extends DokuWiki_Action_Plugin {
             }
             else {
                 $net_n = inet_pton(substr($net, 0, $pos));
-                if ($net_n === false) return false;
+                if ($net_n === false) continue;
     
                 if (strlen($ip_n) != strlen($net_n)) {
                     continue;
